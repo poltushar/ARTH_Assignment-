@@ -16,7 +16,7 @@
 
 2. Commands Used
 
-  . User & Package Setup
+  # . User & Package Setup
 
 ```
 sudo adduser devopsuser
@@ -32,9 +32,9 @@ suod apt install  docker.io
 
 ```
 
-  . Docker Setup
+  # . Docker Setup
 
-``
+```
 docker network create my-network
 docker build -t  chatappbackend:latest .
 docker build -t chatapp:latest .
@@ -42,27 +42,27 @@ docker pull mongo:latest
 docker run -d   --name mongo   --network my-network   -e MONGO_INITDB_ROOT_USERNAME=root   -e MONGO_INITDB_ROOT_PASSWORD=admin   mongo
 docker run -d   --name backend   --network my-network   -p 5001:5001 -e NODE_ENV="production" -e JWT_SECRET="your_jwt_secret_key"  -e MONGODB_URI="mongodb://root:admin@mongo:27017/chatApp?authSource=admin" -e PORT=5001    chatappbackend:latest
 
-``
+```
 
- . Nginx Commands
+ # . Nginx Commands
 
-``
+```
 sudo nano /etc/nginx/sites-available/default
 sudo systemctl reload nginx
 
-``
+```
  
- . Debug Commands
+ # . Debug Commands
 
-``
+```
 docker ps
 docker ps -a
 docker logs <container_id>
 systemctl status nginx
 
-``
+```
 
-3. Screenshots
+### 3. Screenshots
 
 EC2 instance running
 Docker containers (docker ps)
@@ -71,11 +71,11 @@ Browser output (Frontend working)
 API response (/api)
 
 
-4. Configuration Files
+## 4. Configuration Files
 
- . Nginx Config
+ # . Nginx Config
 
-``
+```
  server {
     listen 80;
 
@@ -89,11 +89,11 @@ API response (/api)
         proxy_pass http://localhost:5001;
     }
 }
-``
+```
 
-  .Dockerfile (Frontend)
+  # .Dockerfile (Frontend)
 
-``
+```
 # Build stage
 FROM node:18-alpine as build
 
@@ -123,10 +123,10 @@ RUN chown -R nginx:nginx /usr/share/nginx/html
 
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
-``
+```
 
- .Shell Script
-
+ # .Shell Script
+```
 #!/bin/bash
 
 echo "Disk Usage Command"
@@ -140,7 +140,7 @@ systemctl status nginx
 
 echo "Port Check 5001"
 lsof -i :5001
-
+```
 5.Troubleshooting
 
 
@@ -159,42 +159,42 @@ Application accessible in browser
 6. Answers to Questions
 
 
-1. Difference between Docker image and container 
+# 1. Difference between Docker image and container 
 
  Ans: Docker image is like a blueprint or template. It contains the application code and all dependencies.
 And container is the running version of that image.
 
 For example, if I have a Node.js image, when I run it, it becomes a container where my app is actually running.
 
-2. Difference between systemctl start and systemctl enable
+# 2. Difference between systemctl start and systemctl enable
 
 Ans: systemctl start is used to start a service immediately.
 And systemctl enable is used to make sure the service starts automatically when the system boots.
 
-3. What is nginx reverse proxy used for?
+# 3. What is nginx reverse proxy used for?
 
 Ans: Nginx reverse proxy is used to forward user requests to backend servers.
 It helps in managing traffic, improving security, and sometimes load balancing.
 
 For example, user hits Nginx, and Nginx sends the request to backend API.
 
-4. How do you check which process is using a port in Linux?
+# 4. How do you check which process is using a port in Linux?
 
 Ans: We can use the lsof command to check which process is using a port.
 
 For example, lsof -i :5001 will show the process running on port 5001.
 
-5. What is AWS EC2 used for?
+# 5. What is AWS EC2 used for?
 
 Ans: AWS EC2 is a virtual server in the cloud.
 We use it to host applications, run backend services, and deploy projects.
 
-6. What is Jenkins used for?
+# 6. What is Jenkins used for?
 
 Ans: Jenkins is a CI/CD tool.
 It is used to automate build, testing, and deployment of applications.
 
-7. What is CodePipeline?
+# 7. What is CodePipeline?
 
 Ans: AWS CodePipeline is also a CI/CD service.
 It helps to automate the complete pipeline like build, test, and deploy in AWS environment
