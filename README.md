@@ -41,6 +41,7 @@ docker build -t chatapp:latest .
 docker pull mongo:latest
 docker run -d   --name mongo   --network my-network   -e MONGO_INITDB_ROOT_USERNAME=root   -e MONGO_INITDB_ROOT_PASSWORD=admin   mongo
 docker run -d   --name backend   --network my-network   -p 5001:5001 -e NODE_ENV="production" -e JWT_SECRET="your_jwt_secret_key"  -e MONGODB_URI="mongodb://root:admin@mongo:27017/chatApp?authSource=admin" -e PORT=5001    chatappbackend:latest
+
 ``
 
  . Nginx Commands
