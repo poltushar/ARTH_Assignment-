@@ -65,10 +65,42 @@ systemctl status nginx
 ### 3. Screenshots
 
 EC2 instance running
+<img width="1918" height="1078" alt="image" src="https://github.com/user-attachments/assets/32893cb3-26e3-418a-bb67-e6c035ed16c9" />
+
+ Basic Linux Setup
+On a Debian/Ubuntu-based Linux system, perform the following:
+
+Create a new user and grant sudo access
+<img width="1316" height="815" alt="Screenshot 2026-03-23 170026" src="https://github.com/user-attachments/assets/596be416-62ac-4ca8-b7e6-a5caf545c91e" />
+
+Install the following packages:
+git
+curl
+htop
+nginx
+docker
+<img width="937" height="781" alt="Screenshot 2026-03-23 171150" src="https://github.com/user-attachments/assets/7cc16f7d-2667-4bd9-8de5-5a4a98c48164" />
+<img width="844" height="923" alt="Screenshot 2026-03-23 171212" src="https://github.com/user-attachments/assets/34b417d1-b925-4682-8d8a-922370b88c76" />
+
+Share:
+OS version
+IP address
+Memory usage
+Disk usage
+<img width="1208" height="701" alt="Screenshot 2026-03-23 171724" src="https://github.com/user-attachments/assets/ce61933a-ebe7-4395-b12d-024dadfde6ce" />
+
+
+
 Docker containers (docker ps)
+<img width="1918" height="416" alt="image" src="https://github.com/user-attachments/assets/6f7b8686-4513-4749-a63f-63500dea3e1e" />
+
 Nginx status
+<img width="1918" height="812" alt="image" src="https://github.com/user-attachments/assets/c13c1d93-ca63-4f91-943e-7332309a98e2" />
+
 Browser output (Frontend working)
-API response (/api)
+<img width="1918" height="1078" alt="image" src="https://github.com/user-attachments/assets/98425d21-80de-4cce-b163-98b89adc744c" />
+<img width="1918" height="1076" alt="image" src="https://github.com/user-attachments/assets/7c2a8253-b9ef-40e4-823f-4f4fe2e97e82" />
+
 
 
 ## 4. Configuration Files
