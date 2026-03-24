@@ -1,4 +1,4 @@
-..   DevOps Assignment Submission
+DevOps Assignment Submission
 
 1. Steps Followed
 
