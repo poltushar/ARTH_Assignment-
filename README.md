@@ -18,7 +18,7 @@
 
   . User & Package Setup
 
-``
+```
 sudo adduser devopsuser
 sudo usermod -aG sudo devopsuser
 
@@ -30,7 +30,7 @@ sudo apt install htop
 suod apt install nginx
 suod apt install  docker.io
 
-``
+```
 
   . Docker Setup
 
