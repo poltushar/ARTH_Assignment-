@@ -141,7 +141,7 @@ systemctl status nginx
 echo "Port Check 5001"
 lsof -i :5001
 ```
-5.Troubleshooting
+# 5.Troubleshooting
 
 
 Nginx not starting due to: host not found in upstream "backend"
@@ -156,7 +156,7 @@ Verification:
 Nginx started successfully
 Application accessible in browser
 
-6. Answers to Questions
+# 6. Answers to Questions
 
 
 # 1. Difference between Docker image and container 
